@@ -679,10 +679,6 @@ io.sockets.on('connection', function (socket) {
                 socket.emit('annouce', {message: "<span class='serverMessage'>That nick is not a string!</span>"});
                 error = true;
             }
-            if (!error && !isLetter(data.name)) {
-                socket.emit('annouce', {message: "<span class='serverMessage'>No special characters or spaces in Nicks!</span>"});
-                error = true;
-            }
             if (!error && data.name.toLowerCase() == "admin" || data.name.toLowerCase() == "server") {
                 socket.emit('annouce', {message: "<span class='serverMessage'>That nick is reserved!</span>"});
                 error = true;
